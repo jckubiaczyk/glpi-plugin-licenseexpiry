@@ -8,7 +8,7 @@ class PluginLicenseexpiryDashboard
     public static function getCardHtml($card_options = [])
     {
         return [
-            'label' => 'Expiration des licences',
+            'label' => PluginLicenseexpiryLang::t('card_title'),
             'icon'  => PluginLicenseexpiryConfig::getIcon(),
         ];
     }
@@ -20,6 +20,7 @@ class PluginLicenseexpiryDashboard
     {
         global $DB;
 
+        $t = 'PluginLicenseexpiryLang::t';
         $config = PluginLicenseexpiryConfig::getConfig();
         $alert_days = (int)($config['alert_days_orange'] ?? 30);
         $today = date('Y-m-d');
@@ -59,18 +60,18 @@ class PluginLicenseexpiryDashboard
             'ORDER' => ['glpi_softwarelicenses.expire ASC'],
         ]);
 
-        $label = htmlspecialchars($params['label'] ?? 'Expiration des licences');
-        $icon = htmlspecialchars($params['icon'] ?? 'ti ti-calendar-event');
+        $label = htmlspecialchars($params['label'] ?? $t('card_title'));
+        $icon = htmlspecialchars($params['icon'] ?? 'ti ti-license');
 
         $html = "<div class='card' style='background:#fff;padding:0;overflow:auto;height:100%;'>";
         $html .= "<div style='padding:8px 12px;font-weight:bold;font-size:14px;border-bottom:1px solid #eee;'>";
         $html .= "<i class='{$icon}' style='margin-right:6px;'></i>{$label}</div>";
         $html .= "<table style='width:100%;border-collapse:collapse;font-size:13px;'>";
         $html .= "<thead><tr style='background:#f5f5f5;'>";
-        $html .= "<th style='padding:8px;text-align:left;border-bottom:2px solid #ddd;'>Logiciel</th>";
-        $html .= "<th style='padding:8px;text-align:left;border-bottom:2px solid #ddd;'>Licence</th>";
-        $html .= "<th style='padding:8px;text-align:left;border-bottom:2px solid #ddd;'>N&deg; S&eacute;rie</th>";
-        $html .= "<th style='padding:8px;text-align:left;border-bottom:2px solid #ddd;'>Expiration</th>";
+        $html .= "<th style='padding:8px;text-align:left;border-bottom:2px solid #ddd;'>" . $t('software') . "</th>";
+        $html .= "<th style='padding:8px;text-align:left;border-bottom:2px solid #ddd;'>" . $t('license') . "</th>";
+        $html .= "<th style='padding:8px;text-align:left;border-bottom:2px solid #ddd;'>" . $t('serial') . "</th>";
+        $html .= "<th style='padding:8px;text-align:left;border-bottom:2px solid #ddd;'>" . $t('expiration') . "</th>";
         $html .= "</tr></thead><tbody>";
 
         $count = 0;
@@ -97,7 +98,7 @@ class PluginLicenseexpiryDashboard
         }
 
         if ($count === 0) {
-            $html .= "<tr><td colspan='4' style='padding:12px;text-align:center;color:#999;'>Aucune licence avec date d'expiration</td></tr>";
+            $html .= "<tr><td colspan='4' style='padding:12px;text-align:center;color:#999;'>" . $t('no_license') . "</td></tr>";
         }
 
         $html .= "</tbody></table></div>";

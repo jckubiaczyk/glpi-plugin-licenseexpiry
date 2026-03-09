@@ -10,7 +10,7 @@ if (isset($_POST['update'])) {
 }
 
 Html::header(
-    'Alertes licences',
+    PluginLicenseexpiryLang::t('plugin_name'),
     $_SERVER['PHP_SELF'],
     'config',
     'PluginLicenseexpiryConfig'
