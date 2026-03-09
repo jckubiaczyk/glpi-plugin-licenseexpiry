@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-    <name>Alertes licences</name>
+    <name>License Expiry Alerts</name>
     <key>licenseexpiry</key>
     <state>stable</state>
     <logo>https://raw.githubusercontent.com/jckubiaczyk/glpi-plugin-licenseexpiry/main/logo.png</logo>
