@@ -2,21 +2,29 @@
 
 Plugin GLPI pour le suivi et les alertes d'expiration des licences logicielles.
 
-## Fonctionnalités
+## Apercu
 
-- **Tableau de bord** : carte affichant les licences avec dates d'expiration, colorées selon leur statut :
-  - Rouge : licence expirée
-  - Orange : licence expirant bientôt (seuil configurable)
+### Tableau de bord
+![Tableau de bord](dashboard.PNG)
+
+### Configuration
+![Configuration](configuration.PNG)
+
+## Fonctionnalites
+
+- **Tableau de bord** : carte affichant les licences avec dates d'expiration, colorees selon leur statut :
+  - Rouge : licence expiree
+  - Orange : licence expirant bientot (seuil configurable)
   - Vert : licence valide
-- **Notifications email** : alertes automatiques pour les licences expirées ou bientôt expirées
-- **Configuration** : page de paramétrage accessible depuis Configuration > Alertes licences
+- **Notifications email** : alertes automatiques pour les licences expirees ou bientot expirees
+- **Configuration** : page de parametrage accessible depuis Configuration > Alertes licences
   - Seuil d'alerte (jours avant expiration)
-  - Activation/désactivation des notifications
-  - Fréquence d'envoi des rappels
-  - Email supplémentaire destinataire
+  - Activation/desactivation des notifications
+  - Frequence d'envoi des rappels
+  - Email supplementaire destinataire
   - Couleurs personnalisables (fond et texte)
 
-## Prérequis
+## Prerequis
 
 - GLPI >= 11.0
 
