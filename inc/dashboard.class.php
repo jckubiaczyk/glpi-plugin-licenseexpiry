@@ -92,7 +92,7 @@ class PluginLicenseexpiryDashboard
             $html .= "<td style='padding:6px 8px;'>" . htmlspecialchars($row['software_name'] ?? '') . "</td>";
             $html .= "<td style='padding:6px 8px;'>" . htmlspecialchars($row['license_name'] ?? '') . "</td>";
             $html .= "<td style='padding:6px 8px;'>" . htmlspecialchars($row['serial'] ?? '') . "</td>";
-            $html .= "<td style='padding:6px 8px;font-weight:bold;'>" . htmlspecialchars($expire) . "</td>";
+            $html .= "<td style='padding:6px 8px;font-weight:bold;'>" . htmlspecialchars(Html::convDate($expire)) . "</td>";
             $html .= "</tr>";
             $count++;
         }
