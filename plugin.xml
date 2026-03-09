@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-    <name>License Expiry Alerts</name>
-    <key>licenseexpiry</key>
+    <name>Licenses Expiry Alerts</name>
+    <key>licensesexpiryalerts</key>
     <state>stable</state>
     <logo></logo>
     <description>
