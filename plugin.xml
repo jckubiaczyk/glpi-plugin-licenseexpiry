@@ -6,22 +6,12 @@
     <logo>https://raw.githubusercontent.com/jckubiaczyk/glpi-plugin-licenseexpiry/main/logo.png</logo>
     <description>
         <short>
-            <en>Software license expiry tracking and alerts for GLPI</en>
-            <fr>Suivi et alertes des expirations de licences logicielles pour GLPI</fr>
+            <en><![CDATA[Software license expiry tracking and alerts for GLPI]]></en>
+            <fr><![CDATA[Suivi et alertes des expirations de licences logicielles pour GLPI]]></fr>
         </short>
         <long>
-            <en>GLPI plugin for software license expiry tracking.
-
-- Dashboard card with color-coded rows (red/orange/green) based on expiry status
-- Automatic email notifications for expired or soon-to-expire licenses
-- Configuration page: alert threshold, reminder frequency, customizable colors
-- Auto-setup of GLPI prerequisites (entity alerts, cron task, notification targets)</en>
-            <fr>Plugin GLPI pour le suivi des expirations de licences logicielles.
-
-- Carte tableau de bord avec code couleur (rouge/orange/vert) selon le statut
-- Notifications email automatiques pour les licences expirees ou bientot expirees
-- Page de configuration : seuil alerte, frequence des rappels, couleurs personnalisables
-- Configuration automatique des prerequis GLPI (entite, tache cron, cibles de notification)</fr>
+            <en><![CDATA[GLPI plugin for software license expiry tracking.<br />- Dashboard card with color-coded rows (red/orange/green) based on expiry status<br />- Automatic email notifications for expired or soon-to-expire licenses<br />- Configuration page: alert threshold, reminder frequency, customizable colors<br />- Auto-setup of GLPI prerequisites (entity alerts, cron task, notification targets)]]></en>
+            <fr><![CDATA[Plugin GLPI pour le suivi des expirations de licences logicielles.<br />- Carte tableau de bord avec code couleur (rouge/orange/vert) selon le statut d'expiration<br />- Notifications email automatiques pour les licences expirées ou bientôt expirées<br />- Page de configuration : seuil d'alerte, fréquence des rappels, couleurs personnalisables<br />- Configuration automatique des prérequis GLPI (entité, tâche cron, cibles de notification)]]></fr>
         </long>
     </description>
     <homepage>https://github.com/jckubiaczyk/glpi-plugin-licenseexpiry</homepage>
