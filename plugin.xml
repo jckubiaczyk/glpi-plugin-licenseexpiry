@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-    <name>Licenses Expiry Alerts</name>
-    <key>licensesexpiryalerts</key>
+    <name>License Expiry Alerts</name>
+    <key>licenseexpiry</key>
     <state>stable</state>
-    <logo></logo>
+    <logo>https://raw.githubusercontent.com/jckubiaczyk/glpi-plugin-licenseexpiry/main/dashboard.PNG</logo>
     <description>
         <short>
-            <en><![CDATA[Software license expiry tracking and alerts for GLPI]]></en>
             <fr><![CDATA[Suivi et alertes des expirations de licences logicielles pour GLPI]]></fr>
+            <en><![CDATA[Software license expiry tracking and alerts for GLPI]]></en>
         </short>
         <long>
-            <en><![CDATA[GLPI plugin for software license expiry tracking.<br />- Dashboard card with color-coded rows (red/orange/green) based on expiry status<br />- Automatic email notifications for expired or soon-to-expire licenses<br />- Configuration page: alert threshold, reminder frequency, customizable colors<br />- Auto-setup of GLPI prerequisites (entity alerts, cron task, notification targets)]]></en>
             <fr><![CDATA[Plugin GLPI pour le suivi des expirations de licences logicielles.<br />- Carte tableau de bord avec code couleur (rouge/orange/vert) selon le statut d'expiration<br />- Notifications email automatiques pour les licences expirées ou bientôt expirées<br />- Page de configuration : seuil d'alerte, fréquence des rappels, couleurs personnalisables<br />- Configuration automatique des prérequis GLPI (entité, tâche cron, cibles de notification)]]></fr>
+            <en><![CDATA[GLPI plugin for software license expiry tracking.<br />- Dashboard card with color-coded rows (red/orange/green) based on expiry status<br />- Automatic email notifications for expired or soon-to-expire licenses<br />- Configuration page: alert threshold, reminder frequency, customizable colors<br />- Auto-setup of GLPI prerequisites (entity alerts, cron task, notification targets)]]></en>
         </long>
     </description>
     <homepage>https://github.com/jckubiaczyk/glpi-plugin-licenseexpiry</homepage>
@@ -32,25 +32,21 @@
         <lang>en_GB</lang>
         <lang>fr_FR</lang>
     </langs>
-    <license>GPL v2+</license>
+    <license><![CDATA[GPL v2+]]></license>
     <tags>
-        <en>
-            <tag>licenses</tag>
-            <tag>expiry</tag>
-            <tag>alerts</tag>
-            <tag>dashboard</tag>
-            <tag>notifications</tag>
-        </en>
         <fr>
-            <tag>licences</tag>
-            <tag>expiration</tag>
-            <tag>alertes</tag>
-            <tag>dashboard</tag>
-            <tag>notifications</tag>
+            <tag>Licences</tag>
+            <tag>Expiration</tag>
+            <tag>Alertes</tag>
+            <tag>Dashboard</tag>
+            <tag>Notifications</tag>
         </fr>
+        <en>
+            <tag>Licenses</tag>
+            <tag>Expiry</tag>
+            <tag>Alerts</tag>
+            <tag>Dashboard</tag>
+            <tag>Notifications</tag>
+        </en>
     </tags>
-    <screenshots>
-        <screenshot>https://raw.githubusercontent.com/jckubiaczyk/glpi-plugin-licenseexpiry/main/dashboard.PNG</screenshot>
-        <screenshot>https://raw.githubusercontent.com/jckubiaczyk/glpi-plugin-licenseexpiry/main/configuration.PNG</screenshot>
-    </screenshots>
 </root>
