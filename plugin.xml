@@ -6,22 +6,22 @@
     <logo>https://raw.githubusercontent.com/jckubiaczyk/glpi-plugin-licenseexpiry/main/logo.png</logo>
     <description>
         <short>
-            <fr>Suivi et alertes d'expiration des licences logicielles</fr>
-            <en>Software license expiry tracking and alerts</en>
+            <en>Software license expiry tracking and alerts for GLPI</en>
+            <fr>Suivi et alertes des expirations de licences logicielles pour GLPI</fr>
         </short>
         <long>
-            <fr>Plugin GLPI pour le suivi des expirations de licences logicielles.
-
-- **Tableau de bord** : carte avec code couleur (rouge/orange/vert) selon le statut d'expiration
-- **Notifications email** : alertes automatiques pour les licences expirées ou bientôt expirées
-- **Configuration** : seuil d'alerte, fréquence des rappels, couleurs personnalisables
-- **Installation automatique** : configuration des prérequis GLPI (entité, tâche cron, cibles de notification)</fr>
             <en>GLPI plugin for software license expiry tracking.
 
-- **Dashboard** : color-coded card (red/orange/green) based on expiry status
-- **Email notifications** : automatic alerts for expired or soon-to-expire licenses
-- **Configuration** : alert threshold, reminder frequency, customizable colors
-- **Auto-setup** : automatic GLPI prerequisites configuration (entity, cron task, notification targets)</en>
+- Dashboard card with color-coded rows (red/orange/green) based on expiry status
+- Automatic email notifications for expired or soon-to-expire licenses
+- Configuration page: alert threshold, reminder frequency, customizable colors
+- Auto-setup of GLPI prerequisites (entity alerts, cron task, notification targets)</en>
+            <fr>Plugin GLPI pour le suivi des expirations de licences logicielles.
+
+- Carte tableau de bord avec code couleur (rouge/orange/vert) selon le statut
+- Notifications email automatiques pour les licences expirees ou bientot expirees
+- Page de configuration : seuil alerte, frequence des rappels, couleurs personnalisables
+- Configuration automatique des prerequis GLPI (entite, tache cron, cibles de notification)</fr>
         </long>
     </description>
     <homepage>https://github.com/jckubiaczyk/glpi-plugin-licenseexpiry</homepage>
@@ -39,18 +39,11 @@
         </version>
     </versions>
     <langs>
-        <lang>fr_FR</lang>
         <lang>en_GB</lang>
+        <lang>fr_FR</lang>
     </langs>
     <license>GPL v2+</license>
     <tags>
-        <fr>
-            <tag>licences</tag>
-            <tag>expiration</tag>
-            <tag>alertes</tag>
-            <tag>tableau de bord</tag>
-            <tag>notifications</tag>
-        </fr>
         <en>
             <tag>licenses</tag>
             <tag>expiry</tag>
@@ -58,6 +51,13 @@
             <tag>dashboard</tag>
             <tag>notifications</tag>
         </en>
+        <fr>
+            <tag>licences</tag>
+            <tag>expiration</tag>
+            <tag>alertes</tag>
+            <tag>dashboard</tag>
+            <tag>notifications</tag>
+        </fr>
     </tags>
     <screenshots>
         <screenshot>https://raw.githubusercontent.com/jckubiaczyk/glpi-plugin-licenseexpiry/main/dashboard.PNG</screenshot>
