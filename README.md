@@ -34,7 +34,7 @@ Plugin GLPI pour le suivi et les alertes d'expiration des licences logicielles.
 1. Copier le dossier `licenseexpiry` dans `/marketplace/` ou `/plugins/` de votre installation GLPI
 2. Aller dans **Configuration > Plugins**
 3. Installer puis activer le plugin **Alertes licences**
-4. Ajouter la carte "Expiration des licences" sur votre tableau de bord central
+4. Mise en place automatique d' "Expiration des licences" sur votre tableau de bord central
 
 ## Auteur
 
