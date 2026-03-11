@@ -23,6 +23,7 @@ function plugin_init_licenseexpiry()
 
     // Menu
     $PLUGIN_HOOKS['menu_toadd']['licenseexpiry'] = ['config' => 'PluginLicenseexpiryConfig'];
+
 }
 
 function plugin_version_licenseexpiry()

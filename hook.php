@@ -145,6 +145,60 @@ function plugin_licenseexpiry_uninstall()
     return true;
 }
 
+function plugin_licenseexpiry_deactivate()
+{
+    global $DB;
+    $DB->doQuery("DELETE FROM `glpi_dashboards_items` WHERE `card_id` = 'plugin_licenseexpiry_table'");
+}
+
+function plugin_licenseexpiry_activate()
+{
+    global $DB;
+
+    $dashboard = new \Glpi\Dashboard\Dashboard();
+    if ($dashboard->getFromDB('central')) {
+        $dashboard_id = $dashboard->fields['id'];
+
+        $existing = $DB->request([
+            'FROM'  => 'glpi_dashboards_items',
+            'WHERE' => [
+                'dashboards_dashboards_id' => $dashboard_id,
+                'card_id'                  => 'plugin_licenseexpiry_table',
+            ],
+        ]);
+
+        if (count($existing) === 0) {
+            $max_y = 0;
+            $rows = $DB->request([
+                'SELECT' => ['y', 'height'],
+                'FROM'   => 'glpi_dashboards_items',
+                'WHERE'  => ['dashboards_dashboards_id' => $dashboard_id],
+            ]);
+            foreach ($rows as $row) {
+                $bottom = (int)$row['y'] + (int)$row['height'];
+                if ($bottom > $max_y) {
+                    $max_y = $bottom;
+                }
+            }
+
+            $uid = 'plugin_licenseexpiry_table_' . bin2hex(random_bytes(8));
+            $DB->insert('glpi_dashboards_items', [
+                'dashboards_dashboards_id' => $dashboard_id,
+                'gridstack_id'             => $uid,
+                'card_id'                  => 'plugin_licenseexpiry_table',
+                'x'                        => 0,
+                'y'                        => $max_y,
+                'width'                    => 14,
+                'height'                   => 6,
+                'card_options'             => json_encode([
+                    'color'      => '#ffffff',
+                    'widgettype' => 'licenseExpiryTable',
+                ]),
+            ]);
+        }
+    }
+}
+
 function plugin_licenseexpiry_dashboard_cards(?array $cards = null)
 {
     if ($cards === null) {
