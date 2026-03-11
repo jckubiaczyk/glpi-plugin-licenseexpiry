@@ -1,3 +1,4 @@
+![logo](logo.png)
 # Alertes Licences - Plugin GLPI
 
 Plugin GLPI pour le suivi et les alertes d'expiration des licences logicielles.
