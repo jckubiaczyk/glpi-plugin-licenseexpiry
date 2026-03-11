@@ -98,7 +98,7 @@ function plugin_licenseexpiry_dashboard_cards(?array $cards = null)
         'widgettype'   => ['licenseExpiryTable'],
         'itemtype'     => '\\SoftwareLicense',
         'group'        => __('Assets'),
-        'label'        => 'Expiration des licences',
+        'label'        => __('License Expiry', 'licenseexpiry'),
         'provider'     => 'PluginLicenseexpiryDashboard::getCardHtml',
         'cache'        => false,
     ];

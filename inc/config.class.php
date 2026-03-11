@@ -6,7 +6,7 @@ class PluginLicenseexpiryConfig extends CommonDBTM
 
     public static function getTypeName($nb = 0)
     {
-        return PluginLicenseexpiryLang::t('plugin_name');
+        return __('License Alerts', 'licenseexpiry');
     }
 
     public static function getIcon()
@@ -64,68 +64,67 @@ class PluginLicenseexpiryConfig extends CommonDBTM
 
     public static function showConfigForm()
     {
-        $t = 'PluginLicenseexpiryLang::t';
         $config = self::getConfig();
 
         echo "<div class='center'>";
         echo "<form method='post' action='" . Plugin::getPhpDir('licenseexpiry', false) . "/front/config.form.php'>";
 
         echo "<table class='tab_cadre_fixe'>";
-        echo "<tr class='headerRow'><th colspan='2'><i class='" . self::getIcon() . "'></i> " . $t('config_title') . "</th></tr>";
+        echo "<tr class='headerRow'><th colspan='2'><i class='" . self::getIcon() . "'></i> " . __('Configuration - License Alerts', 'licenseexpiry') . "</th></tr>";
 
         // Dashboard settings
-        echo "<tr class='tab_bg_1'><th colspan='2'>" . $t('dashboard') . "</th></tr>";
+        echo "<tr class='tab_bg_1'><th colspan='2'>" . __('Dashboard', 'licenseexpiry') . "</th></tr>";
 
         echo "<tr class='tab_bg_1'>";
-        echo "<td>" . $t('alert_threshold') . "</td>";
-        echo "<td><input type='number' name='alert_days_orange' value='" . (int)$config['alert_days_orange'] . "' min='1' max='365' class='form-control' style='width:100px;display:inline;'> " . $t('days') . "</td>";
+        echo "<td>" . __('Orange alert threshold (days before expiry)', 'licenseexpiry') . "</td>";
+        echo "<td><input type='number' name='alert_days_orange' value='" . (int)$config['alert_days_orange'] . "' min='1' max='365' class='form-control' style='width:100px;display:inline;'> " . __('days', 'licenseexpiry') . "</td>";
         echo "</tr>";
 
         // Color settings
-        echo "<tr class='tab_bg_1'><th colspan='2'>" . $t('colors') . "</th></tr>";
+        echo "<tr class='tab_bg_1'><th colspan='2'>" . __('Dashboard Colors', 'licenseexpiry') . "</th></tr>";
 
         echo "<tr class='tab_bg_1'>";
-        echo "<td>" . $t('color_expired') . "</td>";
+        echo "<td>" . __('Expired license', 'licenseexpiry') . "</td>";
         echo "<td>";
-        echo "<input type='color' name='color_expired' value='" . htmlspecialchars($config['color_expired']) . "' style='width:50px;height:30px;border:1px solid #ccc;border-radius:4px;cursor:pointer;vertical-align:middle;'> " . $t('background') . " &nbsp;&nbsp;";
-        echo "<input type='color' name='color_expired_text' value='" . htmlspecialchars($config['color_expired_text']) . "' style='width:50px;height:30px;border:1px solid #ccc;border-radius:4px;cursor:pointer;vertical-align:middle;'> " . $t('text');
+        echo "<input type='color' name='color_expired' value='" . htmlspecialchars($config['color_expired']) . "' style='width:50px;height:30px;border:1px solid #ccc;border-radius:4px;cursor:pointer;vertical-align:middle;'> " . __('Background', 'licenseexpiry') . " &nbsp;&nbsp;";
+        echo "<input type='color' name='color_expired_text' value='" . htmlspecialchars($config['color_expired_text']) . "' style='width:50px;height:30px;border:1px solid #ccc;border-radius:4px;cursor:pointer;vertical-align:middle;'> " . __('Text', 'licenseexpiry');
         echo "</td></tr>";
 
         echo "<tr class='tab_bg_1'>";
-        echo "<td>" . $t('color_warning') . "</td>";
+        echo "<td>" . __('Soon-to-expire license (orange)', 'licenseexpiry') . "</td>";
         echo "<td>";
-        echo "<input type='color' name='color_warning' value='" . htmlspecialchars($config['color_warning']) . "' style='width:50px;height:30px;border:1px solid #ccc;border-radius:4px;cursor:pointer;vertical-align:middle;'> " . $t('background') . " &nbsp;&nbsp;";
-        echo "<input type='color' name='color_warning_text' value='" . htmlspecialchars($config['color_warning_text']) . "' style='width:50px;height:30px;border:1px solid #ccc;border-radius:4px;cursor:pointer;vertical-align:middle;'> " . $t('text');
+        echo "<input type='color' name='color_warning' value='" . htmlspecialchars($config['color_warning']) . "' style='width:50px;height:30px;border:1px solid #ccc;border-radius:4px;cursor:pointer;vertical-align:middle;'> " . __('Background', 'licenseexpiry') . " &nbsp;&nbsp;";
+        echo "<input type='color' name='color_warning_text' value='" . htmlspecialchars($config['color_warning_text']) . "' style='width:50px;height:30px;border:1px solid #ccc;border-radius:4px;cursor:pointer;vertical-align:middle;'> " . __('Text', 'licenseexpiry');
         echo "</td></tr>";
 
         echo "<tr class='tab_bg_1'>";
-        echo "<td>" . $t('color_valid') . "</td>";
+        echo "<td>" . __('Valid license', 'licenseexpiry') . "</td>";
         echo "<td>";
-        echo "<input type='color' name='color_valid' value='" . htmlspecialchars($config['color_valid']) . "' style='width:50px;height:30px;border:1px solid #ccc;border-radius:4px;cursor:pointer;vertical-align:middle;'> " . $t('background') . " &nbsp;&nbsp;";
-        echo "<input type='color' name='color_valid_text' value='" . htmlspecialchars($config['color_valid_text']) . "' style='width:50px;height:30px;border:1px solid #ccc;border-radius:4px;cursor:pointer;vertical-align:middle;'> " . $t('text');
+        echo "<input type='color' name='color_valid' value='" . htmlspecialchars($config['color_valid']) . "' style='width:50px;height:30px;border:1px solid #ccc;border-radius:4px;cursor:pointer;vertical-align:middle;'> " . __('Background', 'licenseexpiry') . " &nbsp;&nbsp;";
+        echo "<input type='color' name='color_valid_text' value='" . htmlspecialchars($config['color_valid_text']) . "' style='width:50px;height:30px;border:1px solid #ccc;border-radius:4px;cursor:pointer;vertical-align:middle;'> " . __('Text', 'licenseexpiry');
         echo "</td></tr>";
 
         // Notification settings
-        echo "<tr class='tab_bg_1'><th colspan='2'>" . $t('notifications') . "</th></tr>";
+        echo "<tr class='tab_bg_1'><th colspan='2'>" . __('Email Notifications', 'licenseexpiry') . "</th></tr>";
 
         echo "<tr class='tab_bg_1'>";
-        echo "<td>" . $t('notify_enable') . "</td>";
+        echo "<td>" . __('Enable expiry notifications', 'licenseexpiry') . "</td>";
         echo "<td>";
         Dropdown::showYesNo('notify_enabled', $config['notify_enabled']);
         echo "</td></tr>";
 
         echo "<tr class='tab_bg_1'>";
-        echo "<td>" . $t('notify_frequency') . "</td>";
-        echo "<td><input type='number' name='notify_frequency_days' value='" . (int)$config['notify_frequency_days'] . "' min='1' max='30' class='form-control' style='width:100px;display:inline;'> " . $t('notify_frequency_unit') . "</td>";
+        echo "<td>" . __('Reminder frequency', 'licenseexpiry') . "</td>";
+        echo "<td><input type='number' name='notify_frequency_days' value='" . (int)$config['notify_frequency_days'] . "' min='1' max='30' class='form-control' style='width:100px;display:inline;'> " . __('day(s)', 'licenseexpiry') . "</td>";
         echo "</tr>";
 
         echo "<tr class='tab_bg_1'>";
-        echo "<td>" . $t('notify_extra_email') . "</td>";
+        echo "<td>" . __('Additional email (besides GLPI admin)', 'licenseexpiry') . "</td>";
         echo "<td><input type='email' name='notify_email' value='" . htmlspecialchars($config['notify_email'] ?? '') . "' class='form-control' style='width:300px;display:inline;' placeholder='optionnel@example.com'></td>";
         echo "</tr>";
 
         // Info section
-        echo "<tr class='tab_bg_1'><th colspan='2'>" . $t('info') . "</th></tr>";
+        echo "<tr class='tab_bg_1'><th colspan='2'>" . __('Information', 'licenseexpiry') . "</th></tr>";
 
         global $DB;
         $today = date('Y-m-d');
@@ -166,24 +165,24 @@ class PluginLicenseexpiryConfig extends CommonDBTM
         ])->current()['cnt'];
 
         echo "<tr class='tab_bg_1'>";
-        echo "<td>" . $t('expired_licenses') . "</td>";
+        echo "<td>" . __('Expired licenses', 'licenseexpiry') . "</td>";
         echo "<td><span style='background:#c62828;color:#fff;padding:3px 12px;border-radius:10px;'>$expired</span></td>";
         echo "</tr>";
 
         echo "<tr class='tab_bg_1'>";
-        echo "<td>" . sprintf($t('expiring_licenses'), (int)$config['alert_days_orange']) . "</td>";
+        echo "<td>" . sprintf(__('Licenses expiring within %d days', 'licenseexpiry'), (int)$config['alert_days_orange']) . "</td>";
         echo "<td><span style='background:#ef6c00;color:#fff;padding:3px 12px;border-radius:10px;'>$expiring</span></td>";
         echo "</tr>";
 
         echo "<tr class='tab_bg_1'>";
-        echo "<td>" . $t('valid_licenses') . "</td>";
+        echo "<td>" . __('Valid licenses', 'licenseexpiry') . "</td>";
         echo "<td><span style='background:#2e7d32;color:#fff;padding:3px 12px;border-radius:10px;'>$valid</span></td>";
         echo "</tr>";
 
         echo "<tr class='tab_bg_1'>";
         echo "<td colspan='2' class='center'>";
         echo "<input type='hidden' name='_glpi_csrf_token' value='" . Session::getNewCSRFToken() . "'>";
-        echo "<button type='submit' name='update' class='btn btn-primary'>" . $t('save') . "</button>";
+        echo "<button type='submit' name='update' class='btn btn-primary'>" . __('Save', 'licenseexpiry') . "</button>";
         echo "</td></tr>";
 
         echo "</table>";
@@ -225,7 +224,7 @@ class PluginLicenseexpiryConfig extends CommonDBTM
             ]);
         }
 
-        Session::addMessageAfterRedirect(PluginLicenseexpiryLang::t('config_saved'), true, INFO);
+        Session::addMessageAfterRedirect(__('Configuration saved', 'licenseexpiry'), true, INFO);
     }
 
     private static function sanitizeColor($color)

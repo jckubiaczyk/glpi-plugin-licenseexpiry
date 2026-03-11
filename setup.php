@@ -28,7 +28,7 @@ function plugin_init_licenseexpiry()
 function plugin_version_licenseexpiry()
 {
     return [
-        'name'           => 'Alertes licences',
+        'name'           => __('License Alerts', 'licenseexpiry'),
         'version'        => PLUGIN_LICENSEEXPIRY_VERSION,
         'author'         => 'Nidaplast',
         'license'        => 'GPLv2+',

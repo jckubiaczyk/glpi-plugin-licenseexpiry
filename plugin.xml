@@ -3,7 +3,7 @@
     <name>License Expiry Alerts</name>
     <key>licenseexpiry</key>
     <state>stable</state>
-    <logo>https://raw.githubusercontent.com/jckubiaczyk/glpi-plugin-licenseexpiry/main/dashboard.PNG</logo>
+    <logo>https://raw.githubusercontent.com/jckubiaczyk/glpi-plugin-licenseexpiry/main/logo.svg</logo>
     <description>
         <short>
             <fr><![CDATA[Suivi et alertes des expirations de licences logicielles pour GLPI]]></fr>
@@ -49,4 +49,8 @@
             <tag>Notifications</tag>
         </en>
     </tags>
+    <screenshots>
+        <screenshot>https://raw.githubusercontent.com/jckubiaczyk/glpi-plugin-licenseexpiry/main/dashboard.PNG</screenshot>
+        <screenshot>https://raw.githubusercontent.com/jckubiaczyk/glpi-plugin-licenseexpiry/main/configuration.PNG</screenshot>
+    </screenshots>
 </root>
