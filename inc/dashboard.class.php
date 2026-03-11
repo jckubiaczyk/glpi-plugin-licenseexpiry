@@ -89,7 +89,8 @@ class PluginLicenseexpiryDashboard
 
             $html .= "<tr style='background:{$bg};color:{$color};'>";
             $html .= "<td style='padding:6px 8px;'>" . htmlspecialchars($row['software_name'] ?? '') . "</td>";
-            $html .= "<td style='padding:6px 8px;'>" . htmlspecialchars($row['license_name'] ?? '') . "</td>";
+            $license_url = SoftwareLicense::getFormURLWithID($row['id']);
+            $html .= "<td style='padding:6px 8px;'><a href='" . htmlspecialchars($license_url) . "' style='color:{$color};text-decoration:underline;'>" . htmlspecialchars($row['license_name'] ?? '') . "</a></td>";
             $html .= "<td style='padding:6px 8px;'>" . htmlspecialchars($row['serial'] ?? '') . "</td>";
             $html .= "<td style='padding:6px 8px;font-weight:bold;'>" . htmlspecialchars(Html::convDate($expire)) . "</td>";
             $html .= "</tr>";
