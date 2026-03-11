@@ -58,6 +58,60 @@ function plugin_licenseexpiry_install()
         }
     }
 
+    // Add dashboard card to Central dashboard if not already present
+    $dashboard = new \Glpi\Dashboard\Dashboard();
+    if ($dashboard->getFromDB('central')) {
+        $dashboard_id = $dashboard->fields['id'];
+    } else {
+        // Try by name
+        $iterator = $DB->request([
+            'FROM'  => 'glpi_dashboards_dashboards',
+            'WHERE' => ['name' => 'Central'],
+            'LIMIT' => 1,
+        ]);
+        $dashboard_id = count($iterator) ? $iterator->current()['id'] : null;
+    }
+
+    if ($dashboard_id) {
+        $existing = $DB->request([
+            'FROM'  => 'glpi_dashboards_items',
+            'WHERE' => [
+                'dashboards_dashboards_id' => $dashboard_id,
+                'card_id'                  => 'plugin_licenseexpiry_table',
+            ],
+        ]);
+        if (count($existing) === 0) {
+            // Find the max Y position to place the card at the bottom
+            $max_y = 0;
+            $rows = $DB->request([
+                'SELECT' => ['y', 'height'],
+                'FROM'   => 'glpi_dashboards_items',
+                'WHERE'  => ['dashboards_dashboards_id' => $dashboard_id],
+            ]);
+            foreach ($rows as $row) {
+                $bottom = (int)$row['y'] + (int)$row['height'];
+                if ($bottom > $max_y) {
+                    $max_y = $bottom;
+                }
+            }
+
+            $uid = 'plugin_licenseexpiry_table_' . bin2hex(random_bytes(8));
+            $DB->insert('glpi_dashboards_items', [
+                'dashboards_dashboards_id' => $dashboard_id,
+                'gridstack_id'             => $uid,
+                'card_id'                  => 'plugin_licenseexpiry_table',
+                'x'                        => 0,
+                'y'                        => $max_y,
+                'width'                    => 14,
+                'height'                   => 6,
+                'card_options'             => json_encode([
+                    'color'      => '#ffffff',
+                    'widgettype' => 'licenseExpiryTable',
+                ]),
+            ]);
+        }
+    }
+
     // Ensure admin target exists on notification
     $notif = new Notification();
     if ($notif->getFromDBByCrit(['itemtype' => 'SoftwareLicense', 'event' => 'alert'])) {
@@ -84,6 +138,9 @@ function plugin_licenseexpiry_uninstall()
     global $DB;
 
     $DB->doQuery("DROP TABLE IF EXISTS `glpi_plugin_licenseexpiry_configs`");
+
+    // Remove dashboard card
+    $DB->doQuery("DELETE FROM `glpi_dashboards_items` WHERE `card_id` = 'plugin_licenseexpiry_table'");
 
     return true;
 }
